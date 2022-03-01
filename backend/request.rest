@@ -1,0 +1,54 @@
+GET http://localhost:5000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJBaG1hZCBTb2xlaGluIiwiZW1haWwiOiJzb2xlaGluanJAZ21haWwuY29tIiwiaWF0IjoxNjQ1NjA1NDY3LCJleHAiOjE2NDU3NzgyNjd9.ijNv1gvEHoGK0bhjsvT5wJsGkLtWkr9BFR0Bshhz7V8
+
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "Ahmad Solehin",
+    "email": "solggehinjr@gmail.com",
+    "password": "123456",
+    "confPassword": "123456"
+}
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "solehinjr@gmail.com",
+    "password": "123456"
+}
+
+
+###
+GET http://localhost:5000/token
+
+
+###
+DELETE  http://localhost:5000/logout
+
+
+###
+POST  http://localhost:5000/eventlist
+Content-Type: application/json
+
+{
+    "assign_to": "ahmad solehin"
+}
+
+
+###
+POST http://localhost:5000/event
+Content-Type: application/json
+
+{
+    "title": "Task for Developer",
+    "start": "2022-02-22",
+    "end": "2022-02-22",
+    "assign_to": "mus may",
+    "assign_from": "ahmad"
+}
+
