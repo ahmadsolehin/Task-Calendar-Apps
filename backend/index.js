@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv"
 import cookieParser from "cookie-parser";
-import cors from "cors"; 
+import cors from "cors";
 import db from "./config/Database.js";
 import router from "./routes/index.js";
 dotenv.config();
@@ -11,18 +11,18 @@ import Event from "./models/Event.js";
 
 const app = express();
 
-try{
+try {
 	await db.authenticate();
 	console.log('Database Connected...');
 	//await Event.sync(); //This function : if we didnt have table users, sequalize will generate
-} catch(error){
+} catch (error) {
 	console.error(error);
 }
 
 
-app.use(cors({ credentials:true, origin:'http://localhost:3000' }));
+app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 app.use(cookieParser());
 app.use(express.json());
 app.use(router);
- 
-app.listen(5000, ()=> console.log('Server running at port 5000'));
+
+app.listen(5000, () => console.log('Server running at port 5000'));
